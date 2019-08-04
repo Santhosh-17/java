@@ -41,7 +41,7 @@ class Circle extends Shape{
 	}
 	
 }
-public class Abclass {
+public class Abstract_class {
 
 	public static void main(String[] args) {
 		
