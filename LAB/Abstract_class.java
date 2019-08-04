@@ -57,8 +57,8 @@ public class Abclass {
 		        s.Area();
 		        break;
 		case 2 :s  = new Triangle();
-                s.Area();
-                break;
+                        s.Area();
+                        break;
 		case 3 :s  = new Circle();
 		        s.Area();
 		        break;
