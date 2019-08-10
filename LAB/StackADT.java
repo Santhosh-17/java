@@ -1,3 +1,7 @@
+/*Stack implementation using array
+using the concept of Exception handling
+(try.....catch)*/
+
 import java.util.Scanner;
 import static java.lang.System.out;
 interface ADT{
