@@ -13,7 +13,7 @@ interface ADT{
 class Stck implements ADT
 {
 Scanner scan = new Scanner (System.in);
-int top = -1;
+int top = 0;
 
 int stack[] = new int[m];
 public void create() {
