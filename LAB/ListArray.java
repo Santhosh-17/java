@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 class  List{
@@ -37,11 +36,11 @@ class  List{
 	}
 	
 	public  void search() {
-		String search;
+		String search;/*
 		//Iterator<String> it = al.iterator();
 		System.out.println("Enter the Element to search!!");
 		search = scan.next();
-		/*while(it.hasNext())
+		while(it.hasNext())
 		{
 			String element = it.next();
 			System.out.println("Element is :"+element+" - "+"Search is:"+search);
@@ -49,14 +48,20 @@ class  List{
 				System.out.println("Found!!");
 			}
 			
-		}*/
+		}
 		byte count = 1;
 		for(String list : al) {
 			if(search.equals(list) ) {
 				System.out.println("Found at the position "+count);
 			}
 			count++;
-		}
+		}*/
+		System.out.println("Enter the String to search:");
+		search = scan.next();
+		int pos;
+		pos = al.indexOf(search);
+		System.out.println(search+" is found at the position "+(pos+1));
+		
 	}
 	
 	public void search2() 
@@ -76,7 +81,7 @@ class  List{
 			}
 		}
 		}*/
-		
+		/*
 		char a;
 		String str1;
 		boolean check = false;
@@ -94,9 +99,32 @@ class  List{
 		}
 		if(check == false){
 			System.out.println(" Oops! Sorry "+ x +" is not found in the ArrayList");
+		}*/
+		String str1;
+		boolean check = false;
+		System.out.println("Enter the character :");
+		String c = scan.next();
+		System.out.println("Strings Starts with Same character:");
+		for(int i=0;i<al.size();i++) {
+			str1 = al.get(i);
+			if(str1.startsWith(c)) {
+				check = true;
+				System.out.println(str1);
+			}
+		}
+		if(!check)
+		{
+			System.out.println(" Oops! Sorry "+ c +" is not found in the ArrayList");
 		}
 		
-	}	
+		
+		
+		
+		
+		
+	}
+		
+		
 }
 public class ListArray {
 
