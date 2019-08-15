@@ -1,3 +1,9 @@
+/*1.Creating an arraylist using add(element)
+2.Adding elements to arraylist using add(n,element)
+3.Search element in Arraylist using indexOf(element) ,using iterator and using equals(element)
+4.Display the elements starts with given letter using startswith(character),using charAt(index)
+And also Displaying the elements starts with same Character in the ArrayList using CharAt(index)
+*/
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -37,6 +43,7 @@ class  List{
 	
 	public  void search() {
 		String search;/*
+		METHOD 1-------
 		//Iterator<String> it = al.iterator();
 		System.out.println("Enter the Element to search!!");
 		search = scan.next();
@@ -49,6 +56,8 @@ class  List{
 			}
 			
 		}
+		
+		METHOD 2-------
 		byte count = 1;
 		for(String list : al) {
 			if(search.equals(list) ) {
@@ -56,6 +65,8 @@ class  List{
 			}
 			count++;
 		}*/
+		
+		//METHOD 3-------
 		System.out.println("Enter the String to search:");
 		search = scan.next();
 		int pos;
@@ -66,6 +77,7 @@ class  List{
 	
 	public void search2() 
 	{
+		//METHOD  1--------
 		//List all String Starts with same character
 		/*char i,j;String str1,str2;
 		
@@ -81,7 +93,11 @@ class  List{
 			}
 		}
 		}*/
+		
+		
 		/*
+		
+		METHOD 2--------
 		char a;
 		String str1;
 		boolean check = false;
@@ -100,6 +116,8 @@ class  List{
 		if(check == false){
 			System.out.println(" Oops! Sorry "+ x +" is not found in the ArrayList");
 		}*/
+		
+		//METHOD 3--------
 		String str1;
 		boolean check = false;
 		System.out.println("Enter the character :");
@@ -115,16 +133,8 @@ class  List{
 		if(!check)
 		{
 			System.out.println(" Oops! Sorry "+ c +" is not found in the ArrayList");
-		}
-		
-		
-		
-		
-		
-		
+		}		
 	}
-		
-		
 }
 public class ListArray {
 
@@ -145,9 +155,6 @@ public class ListArray {
 			case 5 :System.exit(0);break;
 			default :System.out.println("Invalid!");
 			}
-		}
-		
-		
+		}	
 	}
-
 }
