@@ -1,3 +1,6 @@
+/* Checking Bank Balance ,deposit and withdraw using 
+User defined Exception called NoMoneyException
+*/
 import java.util.Scanner;
 class NoMoneyException extends Exception{
 	Scanner scan = new Scanner(System.in);
