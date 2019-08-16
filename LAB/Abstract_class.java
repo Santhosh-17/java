@@ -3,12 +3,12 @@ import  java.util.Scanner;
 abstract class Shape{
 	int a;
 	int b;
-	abstract void Area();
+	abstract void printarea();
 }
 
 class Rectangle extends Shape{	
 	Scanner scan = new Scanner(System.in);
-	void Area()
+	void printarea()
 	{
 		System.out.println("Enter Length and Breadth:");
 		a = scan.nextInt();
@@ -20,7 +20,7 @@ class Rectangle extends Shape{
 
 class Triangle extends Shape{
 	Scanner scan = new Scanner(System.in);
-	void Area()
+	void printarea()
 	{
 		System.out.println("Enter Base and height:");
 		a = scan.nextInt();
@@ -32,7 +32,7 @@ class Triangle extends Shape{
 
 class Circle extends Shape{
 	Scanner scan = new Scanner(System.in);
-	void Area()
+	void printarea()
 	{
 		System.out.println("Enter Radius :");
 		a = scan.nextInt();
@@ -54,13 +54,13 @@ public class Abstract_class {
 		switch(ch)
 		{
 		case 1: s  = new Rectangle();
-		        s.Area();
+		        s.printarea();
 		        break;
 		case 2 :s  = new Triangle();
-                        s.Area();
+                        s.printarea();
                         break;
 		case 3 :s  = new Circle();
-		        s.Area();
+		        s.printarea();
 		        break;
 		case 4 :System.exit(0);break;
 		default : System.out.println("Invalid Number!!");break;		
