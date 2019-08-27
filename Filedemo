@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+public class Filedemo
+{
+	public static void main(String[] args)
+	{
+	    String s;
+		String path="";
+		System.out.println("Enter File Name with.extension:");
+		String str = System.console().readLine();
+		try
+		{
+			FileWriter f = new FileWriter(str);
+			System.out.println("Enter what you want to write in file:");
+			s=System.console().readLine();
+			f.write(s);
+			f.close(); 
+			File f1 = new File (str);
+			path = f1.getAbsolutePath();
+			System.out.println(str+" is located at "+path);
+			f.close();
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println("Handled");
+			System.out.println(e);
+		}
+	}
+}            
