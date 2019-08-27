@@ -1,0 +1,29 @@
+class MaxFind
+{
+	public    <T extends Comparable<T>> void method(T[] x)
+	{
+	  T max = x[0];
+		for(int i=0;i<x.length;i++ )
+		{
+			if(x[i].compareTo(max)>0)
+			{
+				max = x[i];
+			}
+		}
+		System.out.println("Maximum element is "+max );
+	}
+}
+public class GenericFunction
+{
+   public static void main(String []args)
+  {
+   MaxFind m = new MaxFind();
+   Integer i[] = {2,4,6,8,10};
+   String s[] ={"Apple","Star","zero"};
+   Double f[]={2.44,4.88,7.10,9.32,12.22};
+   m.method(i);
+   m.method(s);
+   m.method(f);
+  }	
+
+}
