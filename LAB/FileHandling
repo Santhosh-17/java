@@ -1,0 +1,78 @@
+import java.util.Scanner;
+import java.io.*;
+public class FileHandling
+{
+	public static void main(String[] args)
+	{
+		String str;
+		char[] ex = new char[5];
+		int opt,j=0;
+		boolean ch = false;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the File Name with Extension:");
+		str = scan.next();
+		File f = new File(str);
+		for(int i=0;i<str.length();i++)
+		{
+			if(str.charAt(i)=='.')
+			{
+				ch=true;
+			}
+			else if(ch)
+			{
+				ex[j]=str.charAt(i);
+				j++;
+			}
+			
+		}
+		while(true)
+         {
+             System.out.println("\n\t\tMenu\n1.Is File exists? \n2.Is file? \n3.Can Read ? \n4.Can Write?\n5.Can execute?\n6.Length\n7.Type \n8.Exit");
+             System.out.print("Select Your  Option:");
+             opt=scan.nextInt();
+             switch(opt)
+             {
+             case 1:
+                     if(f.exists())
+                    	 System.out.println("\nYes,the File Exists!");
+                     else
+                    	 System.out.println("\nNO,the File not Exists!");
+                     break;
+             case 2:
+            	 if(f.isFile())
+                	 System.out.println("\nYes,it is File!");
+                 else
+                	 System.out.println("\nNO,the File is not a File!");
+                 break;
+             case 3:
+            	 if(f.canRead())
+                	 System.out.println("\nYes,the File is readable!");
+                 else
+                	 System.out.println("\nNO,the File is not readable!");
+                 break;
+             case 4:
+            	 if(f.canWrite())
+                	 System.out.println("\nYes,the File is writable!");
+                 else
+                	 System.out.println("\nNO,the File is not writable!");
+                 break;
+             case 5:
+            	 if(f.canExecute())
+                	 System.out.println("\nYes,the File is executable!");
+                 else
+                	 System.out.println("\nNO,the File is not executable!");
+                 break;
+             case 6:
+            	 System.out.println("\nLength  of the  file    :  "+ f.length());
+                 break;
+             case 7:String str1 = new String(ex);
+            	 System.out.println("\nType   of the file       :" + str1);
+            	 break;
+              case 8:
+                    System.exit(0);break;
+             default:
+                 System.out.println("\nplease select correct option ");
+         }
+	}
+	}
+}
