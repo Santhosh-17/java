@@ -50,7 +50,7 @@ class Consumer implements Runnable
 	Consumer(Q q)
 	{
 		this.q = q;
-		Thread t = new Thread(this,"Producer");
+		Thread t = new Thread(this,"Consumer");
 		t.start();		
 	}
 	public void run()
