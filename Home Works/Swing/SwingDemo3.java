@@ -1,6 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
-public class Swingdemo3 {
+public class SwingDemo3 {
 	public static void main(String[] args) {
 		JFrame f = new JFrame("Demo3"); //Creating Objects for JFrame
 		Button b = new Button("Click Here!");
@@ -19,7 +19,7 @@ public class Swingdemo3 {
 /*
 import java.awt.*;
 import javax.swing.*;
-public class Swingdemo3 {
+public class SwingDemo3 {
 	public static void main(String[] args) {
 		 new A();	
 	}
