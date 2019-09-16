@@ -30,7 +30,7 @@ class A extends JFrame
 {
 	A()
 	{
-		super("Demo1");
+		super("Demo2");
 		JLabel l = new JLabel("Hello World");
 		setLayout(new FlowLayout() );
 		setVisible(true); //Methods in JFrame
