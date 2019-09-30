@@ -215,6 +215,13 @@ public class MiniCalculator extends JFrame implements ActionListener
 				T = T.substring(0,T.length()-1);
 				t.setText(T);
 			}
+			else
+			{
+				String temp = t.getText();
+				temp = temp .substring(0,temp.length()-1);
+				T = T.substring(0,T.length()-1);
+				t.setText(temp);
+			}
 		}
 		else if(str1.equals("+-"))
 		{
