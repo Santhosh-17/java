@@ -35,7 +35,7 @@ public class Conversion  {
 			}
 			);
 		
-		
+		f.setResizable(false);
 		f.setSize(300, 300);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
