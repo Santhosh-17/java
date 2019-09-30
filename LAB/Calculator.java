@@ -412,7 +412,7 @@ public class Calculator extends JFrame implements ActionListener
 			T = val+"";
 			t.setText(T);
 			t1.setText(T);
-			System.out.println("Total "+T);
+	//		System.out.println("Total "+T);
 		}
 		else if(T.equals("") && str1.equals("=") )
 		{
