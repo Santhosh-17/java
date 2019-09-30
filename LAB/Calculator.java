@@ -403,6 +403,14 @@ public class Calculator extends JFrame implements ActionListener
 				t1.setText(T);
 			//	System.out.println("Total "+T);
 			}
+			else
+			{
+				String temp = t.getText();
+				temp = temp .substring(0,temp.length()-1);
+				T = T.substring(0,T.length()-1);
+				t.setText(temp);
+				t1.setText(temp);
+			}
 			
 		}
 		else if(str1.equals("+-"))
