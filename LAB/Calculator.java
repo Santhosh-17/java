@@ -41,8 +41,8 @@ public class Calculator extends JFrame implements ActionListener
         c = getContentPane();
 		
 		Dimension d = new Dimension(300,50);
-		Dimension d1 = new Dimension(60,55);
-		Dimension d2 = new Dimension(70,35);
+		Dimension d1 = new Dimension(70,55);
+		Dimension d2 = new Dimension(70,43);
 		Dimension d4 = new Dimension(300,400);
 		
 		Dimension de = new Dimension(300,450);
@@ -130,7 +130,7 @@ public class Calculator extends JFrame implements ActionListener
 		}
 		
 		
-		 String[] x = {"cosh","sinh","tanh","log","cos","sin","tan","ln","π","√","(",")","00","C","<-","/","7","8","9","*","4","5","6","-","1","2","3","+","%","0",".","="};			
+		 String[] x = {"cosh","sinh","tanh","log","cos","sin","tan","ln","PI","SQRT","(",")","00","C","<-","/","7","8","9","*","4","5","6","-","1","2","3","+","%","0",".","="};			
 		 JButton a[] = new JButton[x.length];
 		 for(int i =0;i<x.length;i++)
 	     {
@@ -207,11 +207,11 @@ public class Calculator extends JFrame implements ActionListener
 				t1.setText(T);
 			}
 		}
-		else if(str1.equals("π"))
+		else if(str1.equals("PI"))
 		{
 			String temp = T;
 			check = true;
-			temp = temp +"π";
+			temp = temp +"PI";
 			T = T + "Math.PI";
 			t.setText(temp);
 			t1.setText(temp);
@@ -273,11 +273,11 @@ public class Calculator extends JFrame implements ActionListener
 			t1.setText(T+s);
 		//	System.out.println("Total"+T);
 		}
-		else if(str1.equals("√") )
+		else if(str1.equals("SQRT") )
 		{
 			String temp = T;
 			check = true;
-			temp = temp +"√(";
+			temp = temp +"sqrt(";
 			T = T + "Math.sqrt(";
 			t.setText(temp);
 			t1.setText(temp);
@@ -303,7 +303,7 @@ public class Calculator extends JFrame implements ActionListener
 				else
 				{
 					
-					System.out.println(T);
+				//	System.out.println(T);
 					s = s+str1;
 					s1 = s1 + str1;
 					val = Integer.parseInt(s1);
