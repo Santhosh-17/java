@@ -12,20 +12,15 @@ public class MiniCalculator extends JFrame implements ActionListener
 	int val = 0;
 	int count = 0;
 	JTextField t;
-	JTextField t1;
 	JPanel p1;
 	JPanel p2;
-	JPanel p3; 
-	JPanel p4; 
-  
 	boolean check = false;
-	boolean hyp = false;
 	Container c;
 	MiniCalculator()
 	{
 		super("MiniCalculator");
 		
-        c = getContentPane();
+                c = getContentPane();
 		
 		Dimension d = new Dimension(300,50);
 		Dimension d1 = new Dimension(70,35);
