@@ -2,7 +2,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.script.*;
 import javax.swing.*;
-
 @SuppressWarnings("serial")
 public class MiniCalculator extends JFrame implements ActionListener 
 {
@@ -19,13 +18,10 @@ public class MiniCalculator extends JFrame implements ActionListener
 	MiniCalculator()
 	{
 		super("MiniCalculator");
-		
-                c = getContentPane();
-		
+		c = getContentPane();
 		Dimension d = new Dimension(300,50);
 		Dimension d1 = new Dimension(70,35);
 		Dimension d4 = new Dimension(300,400);
-
 		t = new JTextField();
 		t.setEditable(false);
 		t.setHorizontalAlignment(JTextField.RIGHT);
@@ -38,20 +34,17 @@ public class MiniCalculator extends JFrame implements ActionListener
 		t.setPreferredSize(d);
 		p1.setPreferredSize(d);
 		p2.setPreferredSize(d4);
-		
 		p1.add(t,BorderLayout.NORTH); 
 		c.add(p1,BorderLayout.NORTH);
 		c.add(p2,BorderLayout.CENTER);
-
 		c.setLayout(new FlowLayout());
 		c.setBackground(Color.DARK_GRAY);
-
-	    String[] str = {"cos","sin","tan","ln","π","√","(",")","00","C","<-","/","7","8","9","*","4","5","6","-","1","2","3","+","+-","0",".","="};			
+	    String[] str = {"cos","sin","tan","ln","PI","SQRT","(",")","00","C","<-","/","7","8","9","*","4","5","6","-","1","2","3","+","+-","0",".","="};			
 	    JButton b[] = new JButton[str.length];
 		for(int i =0;i<str.length;i++)
 		{
 			b[i] = new JButton(str[i]);
-			b[i].setFont(new Font("monospaced", Font.BOLD,16));
+			b[i].setFont(new Font("monospaced", Font.BOLD,14));
 			b[i].setPreferredSize(d1);
 			b[i].setBackground(Color.WHITE);
 			p2.add(b[i]);
@@ -60,22 +53,17 @@ public class MiniCalculator extends JFrame implements ActionListener
 		{
 			b[i].addActionListener(this);
 		}
-		
 		setResizable(false);
 		setVisible(true);
 		setSize(325,385);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 	}
-	
-	 
 	public void convert(String foo) throws ScriptException
 	{
 		ScriptEngineManager mgr = new ScriptEngineManager();
 	    ScriptEngine engine = mgr.getEngineByName("JavaScript");
 	    Ans = engine.eval(foo) +"";
 	}
-
 	public void actionPerformed(ActionEvent ae)
 	{
 		String str1 =ae.getActionCommand(); 
@@ -93,11 +81,11 @@ public class MiniCalculator extends JFrame implements ActionListener
 				t.setText(T);
 			}
 		}
-		else if(str1.equals("π"))
+		else if(str1.equals("PI"))
 		{
 			String temp = T;
 			check = true;
-			temp = temp +"π";
+			temp = temp +"PI";
 			T = T + "Math.PI";
 			t.setText(temp);
 		}
@@ -124,15 +112,14 @@ public class MiniCalculator extends JFrame implements ActionListener
 			}
 			t.setText(temp);	
 		}
-		else if(str1.equals("√") )
+		else if(str1.equals("SQRT") )
 		{
 			String temp = T;
 			check = true;
-			temp = temp +"√(";
+			temp = temp +"sqrt(";
 			T = T + "Math.sqrt(";
 			t.setText(temp);
 		}
-		
 		else if(  str1.equals("(") || str1.equals(")") || str1.equals("%") || str1.equals("1") || str1.equals("2") || str1.equals("3") || str1.equals("4") || str1.equals("5") || str1.equals("6") || str1.equals("7") || str1.equals("8") || str1.equals("9") ||str1.equals("0") || str1.equals("+") || str1.equals("-") || str1.equals("*") || str1.equals("/")  )
 		{
 			
@@ -144,9 +131,7 @@ public class MiniCalculator extends JFrame implements ActionListener
 			else
 			{
 				if(str1.equals(")"))
-				{
 					check = false;
-				}
 				if(check)
 				{
 					String temp = t.getText();
@@ -170,20 +155,12 @@ public class MiniCalculator extends JFrame implements ActionListener
 						t.setText(T);
 					}
 				}
-			}
-			
+			}	
 		}
 		else if(str1.equals("C"))
 		{
 			 T ="";
-			 if(T.equals(""))
-			 {
-				 t.setText("0");
-			 }
-			 else
-			 {
-				 t.setText("0");
-			 }
+			 t.setText("0");
 		}
 		else if(str1.equals("00"))
 		{
@@ -231,13 +208,7 @@ public class MiniCalculator extends JFrame implements ActionListener
 		}
 		else if(str1.equals("="))
 		{
-		
-			try {
-				convert(T);
-			} catch (ScriptException e1) {
-				e1.printStackTrace();
-			}
-			
+			try { convert(T); } catch (ScriptException e1) { e1.printStackTrace(); }
 			T = Ans;
 			t.setText(Ans);
 		}
