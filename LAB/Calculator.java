@@ -314,47 +314,48 @@ public class Calculator extends JFrame implements ActionListener
 				}
 				
 			}
-			else if(T.equals("") && str1.equals("0"))
-			{
-				T = "";
-				t.setText("0");
-				t1.setText("0");
-			}
 			else
 			{
 				if(str1.equals(")"))
 				{
 					check = false;
 				}
-				if(check)
+				else if(check)
 				{
 					String temp = t.getText();
 					temp = temp + str1;
 					T = T + str1;
 					t.setText(temp);
 					t1.setText(temp);
-				//	System.out.println(T);
+					System.out.println(T);
 					check = true;
 				}
-				else
+				else if(str1.equals(")"))
 				{
-					if(str1.equals(")"))
-					{
 						String temp = t.getText();
 						temp = temp + str1;
 						T = T + str1;
 						t.setText(temp);
 						t1.setText(temp);
 				//		System.out.println(T);
-					}
-					else
-					{
-						T = T + str1;
-						t.setText(T);
-						t1.setText(T);
-					}
 				}
+			}
+			if(T.equals("") && str1.equals("0") )
+			{
+				T = "";
+				t.setText("0");
+				t1.setText("0");
+			}
 
+			else
+			{
+				if(t.getText().equals("0") && T.equals(""))
+				{
+					T ="";
+				}
+				T = T + str1;
+				t.setText(T);
+				t1.setText(T);
 			}
 		//	System.out.println("Total "+T);
 			
@@ -362,16 +363,10 @@ public class Calculator extends JFrame implements ActionListener
 		else if(str1.equals("C"))
 		{
 			 T ="";
-			 if(T.equals(""))
-			 {
-				 t.setText("0");
-				 t1.setText("0");
-			 }
-			 else
-			 {
-				 t.setText("0");
-				 t1.setText("0");
-			 }
+			 Ans ="";
+			 t.setText("0");
+			 t1.setText("0");
+		//	 System.out.println("Total"+T);
 		}
 		else if(str1.equals("00"))
 		{
@@ -406,11 +401,12 @@ public class Calculator extends JFrame implements ActionListener
 			else
 			{
 				String temp = t.getText();
-				temp = temp .substring(0,temp.length()-1);
+				temp = temp.substring(0,temp.length()-1);
 				T = T.substring(0,T.length()-1);
 				t.setText(temp);
 				t1.setText(temp);
 			}
+			
 			
 		}
 		else if(str1.equals("+-"))
@@ -441,7 +437,7 @@ public class Calculator extends JFrame implements ActionListener
 			t1.setText(Ans);
 	//		System.out.println("Total "+T);
 		}
-		Ans = "0";
+		Ans = "";
 	}
 
 	public static void main(String[] args)
